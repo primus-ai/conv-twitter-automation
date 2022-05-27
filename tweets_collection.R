@@ -20,7 +20,7 @@ rbot_token <- rtweet::create_token(
 
 constituyentes <- readRDS(file = "data/constituyentes.rds")
  
-constituyentes_tweets <- get_timeline(constituyentes$screen_name, n = 10)
+constituyentes_tweets <- get_timeline(constituyentes$screen_name, n = 10, token = rbot_token)
 
 constituyentes_tweets <- constituyentes_tweets %>% 
     filter(created_at >= today() - 7)
