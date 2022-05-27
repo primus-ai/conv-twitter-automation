@@ -3,7 +3,7 @@ name: twitter-automation
 # Controls when the action will run.
 on:
   schedule:
-   - cron:  '30 8,19 * * *'
+   - cron:  '46 8,19 * * *'
   #push:
    # branches:
     #  - main
