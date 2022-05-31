@@ -8,7 +8,7 @@ library(tidyverse)
 # constituyentes <- constituyentes %>% filter(screen_name != "convencioncl")
 # saveRDS(constituyentes, file = "data/constituyentes.rds")
 rbot_token <- rtweet::create_token(
-  app = "rtweet-demo-primus",
+  app = "twitternetwork2",
   # the name of the Twitter app
   consumer_key = Sys.getenv("RBOT_TWITTER_CONSUMER_API_KEY"),
   consumer_secret = Sys.getenv("RBOT_TWITTER_CONSUMER_API_SECRET"),
