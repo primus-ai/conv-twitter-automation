@@ -10,20 +10,22 @@ on:
 
 
 jobs: 
-  autoscrape:
+  get-tweets:
     # The type of runner that the job will run on
     runs-on: macos-latest
 
     # Load repo and install R
     steps:
-    - uses: actions/checkout@master
-    - uses: r-lib/actions/setup-r@master
+    - uses: actions/checkout@main
+    - uses: r-lib/actions/setup-r@v2
 
     # Set-up R
-    - name: Install packages
-      run: |
-        R -e 'install.packages("tidyverse")'
-        R -e 'install.packages("rtweet")'
+    - name: Install tidyverse package
+      run: Rscript -e 'install.packages("tidyverse", dependencies = TRUE)'
+    - name: Install rtweet package
+      run: Rscript -e 'install.packages("rtweet", dependencies = TRUE)'
+    - name: Install lubridate package
+      run: Rscript -e 'install.packages("lubridate", dependencies = TRUE)'
     # Run R script
     - name: Harvest
       run: Rscript tweets_collection.R
