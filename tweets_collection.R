@@ -1,6 +1,7 @@
 # Load libraries
 library(rtweet)
 library(tidyverse)
+library(lubridate)
 
 # Get Constituyentes Data
 
@@ -20,9 +21,9 @@ rbot_token <- rtweet::create_token(
 
 constituyentes <- readRDS(file = "data/constituyentes.rds")
  
-constituyentes_tweets <- get_timeline(constituyentes$screen_name, n = 10, token = rbot_token)
+constituyentes_tweets <- rtweet::get_timeline(constituyentes$screen_name, n = 10, token = rbot_token)
 
 constituyentes_tweets <- constituyentes_tweets %>% 
-    filter(created_at >= today() - 7)
+    filter(created_at >= lubridate::today() - 7)
 
 write_rds(constituyentes_tweets, "data/constituyentes_tweets.rds")
