@@ -7,7 +7,7 @@ on:
   #  branches:
   #    - main
 jobs:
-  bigbookofr_bot-post:
+  get_tweets:
     runs-on: macOS-latest
     
     steps:
