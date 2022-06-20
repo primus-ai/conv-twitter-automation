@@ -26,4 +26,4 @@ constituyentes_tweets <- rtweet::get_timeline(constituyentes$screen_name, n = 10
 constituyentes_tweets <- constituyentes_tweets %>% 
     filter(created_at >= lubridate::today() - 7)
 
-write_rds(constituyentes_tweets, "data/constituyentes_tweets.rds")
+write_rds(constituyentes_tweets, "constituyentes_tweets.rds")
