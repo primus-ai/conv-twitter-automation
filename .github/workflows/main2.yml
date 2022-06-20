@@ -1,7 +1,5 @@
 name: twitter-automation
 
-name: twitter-automation
-
 on:
   schedule:
     - cron: '0 */3 * * *'
